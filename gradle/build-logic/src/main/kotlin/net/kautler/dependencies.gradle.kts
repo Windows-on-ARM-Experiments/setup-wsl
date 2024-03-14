@@ -19,7 +19,7 @@ package net.kautler
 import net.kautler.util.NullOutputStream
 import net.kautler.util.add
 import net.kautler.util.ignoredDependencies
-import java.net.URL
+import java.net.URI
 import java.security.DigestInputStream
 import java.security.MessageDigest
 
@@ -36,7 +36,7 @@ val validateGradleWrapperJar by tasks.registering {
     }
 
     doLast {
-        val expectedDigest = URL("https://services.gradle.org/distributions/gradle-${gradle.gradleVersion}-wrapper.jar.sha256").readText()
+        val expectedDigest = URI("https://services.gradle.org/distributions/gradle-${gradle.gradleVersion}-wrapper.jar.sha256").toURL().readText()
 
         val sha256 = MessageDigest.getInstance("SHA-256")
         layout
