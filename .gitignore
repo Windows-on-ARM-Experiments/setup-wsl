@@ -14,7 +14,9 @@
 
 /.idea/
 /.gradle/
-/build/
+/build/*
+!/build/distributions/
+!/build/libs/
 /gradle/build-logic/.gradle/
 /gradle/build-logic/build/
 /gradle/conditional-refresh-versions/.gradle/

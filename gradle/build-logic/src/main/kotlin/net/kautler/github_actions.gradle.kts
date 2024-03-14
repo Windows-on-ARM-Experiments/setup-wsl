@@ -26,6 +26,7 @@ import org.jetbrains.kotlin.com.intellij.openapi.util.Disposer
 import org.jetbrains.kotlin.com.intellij.openapi.vfs.local.CoreLocalFileSystem
 import org.jetbrains.kotlin.com.intellij.openapi.vfs.local.CoreLocalVirtualFile
 import org.jetbrains.kotlin.com.intellij.psi.PsiManager
+import org.jetbrains.kotlin.config.CommonConfigurationKeys
 import org.jetbrains.kotlin.config.CompilerConfiguration
 import org.jetbrains.kotlin.psi.KtFile
 import org.jetbrains.kotlin.psi.KtLiteralStringTemplateEntry
@@ -104,7 +105,7 @@ val File.importedFiles: List<File>
                     .createForProduction(
                         Disposer.newDisposable(),
                         CompilerConfiguration().apply {
-                            put(MESSAGE_COLLECTOR_KEY, NONE)
+                            put(CommonConfigurationKeys.MESSAGE_COLLECTOR_KEY, NONE)
                         },
                         JVM_CONFIG_FILES
                     )
